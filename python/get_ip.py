@@ -37,7 +37,7 @@ if __name__ == '__main__':
         ip = getLocalIP()
         
         if ip == False:
-            play("正在获取网络地址")
+            print("正在获取网络地址")
         else:
             count += 1
             print (ip)
