@@ -33,14 +33,17 @@ def getLocalIP():
 
 if __name__ == '__main__':
     count = 0
+    lastIp = ''
     while True:
         ip = getLocalIP()
         
         if ip == False:
-            print("正在获取网络地址")
+            play("正在获取网络地址")
         else:
             count += 1
+            lastIp = ip
             print (ip)
-        if count == 10:
+        if count == 30 or ip.find("inet") < 0:
             break
         time.sleep(1)
+    print('IP: ' + lastIp)
