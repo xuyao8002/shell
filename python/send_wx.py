@@ -39,7 +39,24 @@ def sendmsg(openid,msg):
     result = response.json()
     print(result)
 
+def sendmsgtmp(openid,templateid,msg):
+
+    body = {
+        "touser": openid,
+        "template_id": templateid,
+        "url": "www.baidu.com",
+        "data": {"ip": {"value": msg, "color": "#173177"}}
+    }
+    response = requests.post(
+        url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(get_access_token()),
+        json=body
+    )
+    result = response.json()
+    print(result)
+    print(body)
+
 
 
 if __name__ == '__main__':
-    sendmsg('xxxx','xxxx')
+    sendmsg('xxx','xxx')
+    # sendmsgtmp('xxx', 'xxx', 'xxx')

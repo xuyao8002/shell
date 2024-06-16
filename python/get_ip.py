@@ -31,7 +31,7 @@ def getLocalIP():
         ip = "完".join(ip)
     return ip
 
-if __name__ == '__main__':
+def getIp():
     count = 0
     lastIp = ''
     while True:
@@ -46,4 +46,7 @@ if __name__ == '__main__':
         if count == 30 or ip.find("inet") < 0:
             break
         time.sleep(1)
-    print('IP: ' + lastIp)
+    return lastIp
+
+if __name__ == '__main__':
+    print('IP: ' + getIp())
